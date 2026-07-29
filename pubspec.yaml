@@ -41,7 +41,6 @@ dependencies:
   shimmer: ^3.0.0
   lottie: ^3.1.2
   flutter_slidable: ^3.1.0
-  easy_search_bar: ^2.5.3
 
   # Routing
   go_router: ^14.2.0
@@ -72,13 +71,4 @@ flutter:
     - assets/lottie/
     - assets/fonts/
 
-  fonts:
-    - family: Cairo
-      fonts:
-        - asset: assets/fonts/Cairo-Regular.ttf
-        - asset: assets/fonts/Cairo-Bold.ttf
-          weight: 700
-        - asset: assets/fonts/Cairo-SemiBold.ttf
-          weight: 600
-        - asset: assets/fonts/Cairo-Light.ttf
-          weight: 300
+  # fonts loaded via google_fonts package at runtime
