@@ -31,7 +31,8 @@ dependencies:
   go_router: ^13.2.0
 
   # Utilities
-  intl: ^0.19.0
+  # Flutter 3.19 SDK bundles intl 0.18.1 via flutter_localizations
+  intl: 0.18.1
   uuid: ^4.4.2
   equatable: ^2.0.5
   dartz: ^0.10.1
