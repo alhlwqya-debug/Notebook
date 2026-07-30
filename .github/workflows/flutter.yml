@@ -21,21 +21,25 @@ jobs:
           distribution: 'zulu'
           java-version: '17'
 
-      - name: Set up Flutter 3.19.0
+      # تم إزالة تحديد الإصدار المسبب للمشكلة وجعله يجلب أحدث إصدار مستقر تلقائياً
+      - name: Set up Flutter (Latest Stable)
         uses: subosito/flutter-action@v2
         with:
-          flutter-version: '3.19.0'
           channel: 'stable'
           cache: true
 
-      - name: Get dependencies
-        run: flutter pub get
+      # تنظيف كاش الحزم القديمة وجلب التوافقية الجديدة بنقاء
+      - name: Clean and Get dependencies
+        run: |
+          flutter pub cache clean --force
+          flutter pub get
 
       - name: Analyze code
         run: flutter analyze --no-fatal-infos
 
+      # بناء الـ APK مع الحفاظ على الأيقونات ومنع تعارض التحميل
       - name: Build APK (release)
-        run: flutter build apk --release --no-tree-shake-icons
+        run: flutter build apk --release --no-tree-shake-icons --no-pub
 
       - name: Upload APK artifact
         uses: actions/upload-artifact@v4
