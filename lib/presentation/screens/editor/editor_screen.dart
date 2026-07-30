@@ -2,7 +2,6 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../../core/theme/app_colors.dart';
 import '../../../domain/entities/document.dart';
 import '../../providers/document_provider.dart';
 import '../../providers/settings_provider.dart';
